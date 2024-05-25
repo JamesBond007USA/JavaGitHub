@@ -1,25 +1,55 @@
 package cuentas;
 
+/**
+ * La clase CCuenta representa una cuenta bancaria con atributos como nombre, número de cuenta, saldo y tipo de interés.
+ * Permite realizar operaciones como ingreso y retiro de dinero.
+ * 
+ * @author kevin 
+ * @version 1.0
+ * @since 2024-05-25
+ */
 public class CCuenta {
 
-    private String nombre;
-    private String cuenta;
-    private double saldo;
-    private double tipoInterés;
+    private String nombre; // Nombre del titular de la cuenta
+    private String cuenta; // Número de cuenta
+    private double saldo; // Saldo actual de la cuenta
+    private double tipoInterés; // Tipo de interés de la cuenta
 
+    /**
+     * Constructor por defecto de la clase CCuenta.
+     */
     public CCuenta() {
     }
 
+    /**
+     * Constructor con parámetros de la clase CCuenta.
+     * 
+     * @param nom    Nombre del titular de la cuenta.
+     * @param cue    Número de cuenta.
+     * @param sal    Saldo inicial de la cuenta.
+     * @param tipo   Tipo de interés de la cuenta.
+     */
     public CCuenta(String nom, String cue, double sal, double tipo) {
         nombre = nom;
         cuenta = cue;
         saldo = sal;
+        tipoInterés = tipo;
     }
 
+    /**
+     * Método para obtener el estado actual de la cuenta.
+     * 
+     * @return El saldo actual de la cuenta.
+     */
     public double estado() {
         return getSaldo();
     }
 
+    /**
+     * Método para realizar una retirada de dinero de la cuenta.
+     * 
+     * @param cantidad La cantidad a retirar.
+     */
     public void retirar(double cantidad) {
         try {
             System.out.println("Retiro en cuenta:" + cantidad);
@@ -35,6 +65,11 @@ public class CCuenta {
         }
     }
 
+    /**
+     * Método para realizar un ingreso de dinero en la cuenta.
+     * 
+     * @param cantidad La cantidad a ingresar.
+     */
     public void ingresar(double cantidad) {
         try {
             System.out.println("Ingreso en cuenta:" + cantidad);
@@ -48,6 +83,11 @@ public class CCuenta {
         }
     }
 
+    /**
+     * Método principal del programa para probar la clase CCuenta.
+     * 
+     * @param args Los argumentos de la línea de comandos (no utilizados en este caso).
+     */
     public static void main(String[] args) {
         CCuenta cuenta1;
         double saldoActual;
@@ -60,6 +100,11 @@ public class CCuenta {
         System.out.println("El saldo actual es " + saldoActual);
     }
 
+    /**
+     * Método para realizar operaciones de ingreso y retiro en la cuenta.
+     * 
+     * @param cuenta1 La cuenta en la que se realizarán las operaciones.
+     */
     private static void operaciones(CCuenta cuenta1) {
         // Operaciones de ingreso y retiro
         cuenta1.retirar(2300);
@@ -67,56 +112,72 @@ public class CCuenta {
     }
 
     /**
-     * @return the nombre
+     * Método para obtener el nombre del titular de la cuenta.
+     * 
+     * @return El nombre del titular de la cuenta.
      */
     public String getNombre() {
         return nombre;
     }
 
     /**
-     * @param nombre the nombre to set
+     * Método para establecer el nombre del titular de la cuenta.
+     * 
+     * @param nombre El nombre del titular de la cuenta.
      */
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
     /**
-     * @return the cuenta
+     * Método para obtener el número de cuenta.
+     * 
+     * @return El número de cuenta.
      */
     public String getCuenta() {
         return cuenta;
     }
 
     /**
-     * @param cuenta the cuenta to set
+     * Método para establecer el número de cuenta.
+     * 
+     * @param cuenta El número de cuenta.
      */
     public void setCuenta(String cuenta) {
         this.cuenta = cuenta;
     }
 
     /**
-     * @return the saldo
+     * Método para obtener el saldo actual de la cuenta.
+     * 
+     * @return El saldo actual de la cuenta.
      */
     public double getSaldo() {
         return saldo;
     }
 
     /**
-     * @param saldo the saldo to set
+     * Método para establecer el saldo actual de la cuenta.
+     * 
+     * @param saldo El saldo actual de la cuenta.
      */
     public void setSaldo(double saldo) {
         this.saldo = saldo;
     }
 
     /**
-     * @return the tipoInterés
+     * Método para obtener el tipo de interés de la cuenta.
+     * 
+     * @return El tipo de interés de la cuenta.
      */
     public double getTipoInterés() {
         return tipoInterés;
     }
 
     /**
-     * @param tipoInterés the tipoInterés to set
+     * Método para establecer el tipo de interés de la cuenta.
+     * 
+     * @param tipoInterés El tipo de interés de la cuenta.
      */
     public void setTipoInterés(double tipoInterés) {
         this.tipoInterés = tipoInterés;
